@@ -2,6 +2,7 @@ let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 let canMove=0;
 let x = 0, y = 0, dx = 5, dy = 5, r = 15; 
+let color="#"+Math.floor(Math.random()*16777215).toString(16);
 
 function drawBall() 
 {
@@ -16,9 +17,7 @@ function drawBall()
 document.addEventListener("keydown", keydownHandler);
 
 function keydownHandler(e)
-
 {
-
      if(e.key=="ArrowRight")   x+=dx;
      else if(e.key=="ArrowLeft")   x-=dx;
      else if(e.key=="ArrowUp")   y-=dy;
@@ -36,12 +35,12 @@ function mousemoveHandler(e)
      }
 }
 
-document.addEventListener("mousedown", mousemoveHandler);
-document.addEventListener("mouseup", mousemoveHandler);
+document.addEventListener("mousedown", mousedown);
+document.addEventListener("mouseup", mouseup);
 function mousedown()
 {
     canMove=1;
-	color="#"+Math.floor(Math.random()*16777215).toString(16);
+	color = "#"+Math.floor(Math.random()*16777215).toString(16);
 }
 function mouseup()
 {
@@ -49,13 +48,9 @@ function mouseup()
 }
 
 function draw()
-
 {
-
     //ctx.clearRect(0, 0, canvas.width, canvas.height); 如果要抹除路徑，只讓滑鼠在按下時跟著移動//
-
     drawBall();
-
     requestAnimationFrame(draw);
 	
 }
