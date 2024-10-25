@@ -8,7 +8,7 @@ let walk = [];
 for(let i = 0; i < N; ++i)
 {
 	walk[i] = new Image();
-	walk[i].src = "img//Warrior_Run_(" + i + ").png";
+	walk[i].src = "img//Warrior_Run_" + i + ".png";
 }
 
 // 預載反向走路圖片
@@ -16,7 +16,7 @@ let rwalk = [];
 for(let i = 0; i < N; ++i)
 {
 	rwalk[i] = new Image();
-	rwalk[i].src = "rimg/Warrior_Run_(" + i + ").png";
+	rwalk[i].src = "rimg/Warrior_Run_" + i + ".png";
 }
 
 // 貼上圖片
